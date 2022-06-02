@@ -12,24 +12,54 @@
                 </a>
             </li>
             <li>
-                <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">
-                    <i class="fab fa-laravel" ></i>
-                    <span class="nav-link-text" >{{ __('Laravel Examples') }}</span>
+                <a href="{{ route('profile.edit')  }}">
+                    <i class="tim-icons icon-single-02"></i>
+                    <p>{{ __('User Profile') }}</p>
+                </a>
+            </li>
+            <li>
+                <a data-toggle="collapse" href="#laravel-examples" aria-expanded="false">
+                    <i class="tim-icons icon-single-copy-04" ></i>
+                    <span class="nav-link-text" >{{ __('Categorires') }}</span>
                     <b class="caret mt-1"></b>
                 </a>
 
-                <div class="collapse show" id="laravel-examples">
+                <div class="collapse" id="laravel-examples">
                     <ul class="nav pl-4">
-                        <li ndif>
-                            <a href="{{ route('profile.edit')  }}">
-                                <i class="tim-icons icon-single-02"></i>
-                                <p>{{ __('User Profile') }}</p>
+                        <li>
+                            <a href="/categories">
+                                <i class="tim-icons icon-bullet-list-67"></i>
+                                <p>{{ __('Show Categories') }}</p>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('user.index')  }}">
+                        <a href="/categories/create">
+                                <i class="tim-icons icon-simple-add"></i>
+                                <p>{{ __('Create Category') }}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a data-toggle="collapse" href="#laravel1-examples" aria-expanded="false">
+                    <i class="tim-icons icon-components" ></i>
+                    <span class="nav-link-text" >{{ __('Products') }}</span>
+                    <b class="caret mt-1"></b>
+                </a>
+
+                <div class="collapse " id="laravel1-examples">
+                    <ul class="nav pl-4">
+                        <li>
+                            <a href="/products">
                                 <i class="tim-icons icon-bullet-list-67"></i>
-                                <p>{{ __('User Management') }}</p>
+                                <p>{{ __('Show Products') }}</p>
+                            </a>
+                        </li>
+                        <li>
+                        <a href="/products/create">
+                                <i class="tim-icons icon-simple-add"></i>
+                                <p>{{ __('Create Products') }}</p>
                             </a>
                         </li>
                     </ul>
@@ -69,12 +99,6 @@
                 <a href="{{ route('pages.rtl') }}">
                     <i class="tim-icons icon-world"></i>
                     <p>{{ __('RTL Support') }}</p>
-                </a>
-            </li>
-            <li class="active bg-info">
-                <a href="{{ route('pages.upgrade') }}">
-                    <i class="tim-icons icon-spaceship"></i>
-                    <p>{{ __('Upgrade to PRO') }}</p>
                 </a>
             </li>
         </ul>
