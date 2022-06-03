@@ -5,10 +5,18 @@
             <a href="#" class="simple-text logo-normal">{{ __('Black Dashboard') }}</a>
         </div>
         <ul class="nav">
-            <li class="active ">
+        @if(Auth::user()->role == 'admin')
+            <li class="active">
                 <a href="{{ route('home') }}">
                     <i class="tim-icons icon-chart-pie-36"></i>
                     <p>{{ __('Dashboard') }}</p>
+                </a>
+            </li>
+        @endif
+            <li class="active">
+                <a href="{{ route('home') }}">
+                    <i class="tim-icons icon-bank"></i>
+                    <p>{{ __('Home') }}</p>
                 </a>
             </li>
             <li>
@@ -17,6 +25,33 @@
                     <p>{{ __('User Profile') }}</p>
                 </a>
             </li>
+            <!-- <li>
+                <a href="{{ route('user.index')  }}">
+                    <i class="tim-icons icon-bullet-list-67"></i>
+                    <p>{{ __('User Management') }}</p>
+                </a>
+            </li> -->
+            @if(Auth::user()->role == 'user')
+            <li>
+                <a href="#">
+                    <i class="tim-icons icon-cart"></i>
+                    <p>{{ __('My Cart') }}</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="tim-icons icon-paper"></i>
+                    <p>{{ __('My Orders') }}</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('logout') }}"  onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
+                    <i class="tim-icons icon-double-left"></i>
+                    <p>{{ __('logout') }}</p>
+                </a>
+            </li>
+        @endif
+            @if(Auth::user()->role == 'admin')
             <li>
                 <a data-toggle="collapse" href="#laravel-examples" aria-expanded="false">
                     <i class="tim-icons icon-single-copy-04" ></i>
@@ -89,18 +124,13 @@
                     <p>{{ __('Table List') }}</p>
                 </a>
             </li>
-            <li>
-                <a href="{{ route('pages.typography') }}">
-                    <i class="tim-icons icon-align-center"></i>
-                    <p>{{ __('Typography') }}</p>
-                </a>
-            </li>
             <li >
                 <a href="{{ route('pages.rtl') }}">
                     <i class="tim-icons icon-world"></i>
                     <p>{{ __('RTL Support') }}</p>
                 </a>
             </li>
+            @endif
         </ul>
     </div>
 </div>

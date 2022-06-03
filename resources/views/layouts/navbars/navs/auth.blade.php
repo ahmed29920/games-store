@@ -1,3 +1,14 @@
+<?php
+    use App\Http\Controllers\ProductsController;
+    $cart = 0 ;
+    if(Auth::check()){
+        $cart = ProductsController::cartItems();
+        $user = 1;
+    }
+    else{
+        $user=0;
+    }
+?>
 <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
     <div class="container-fluid">
         <div class="navbar-wrapper">
@@ -8,7 +19,6 @@
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
             </div>
-            <a class="navbar-brand" href="#">{{ $page ?? __('Dashboard') }}</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -17,6 +27,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto">
+            @if(Auth::user()->role == 'admin')
                 <li class="search-bar input-group">
                     <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i>
                         <span class="d-lg-none d-md-block">{{ __('Search') }}</span>
@@ -46,6 +57,7 @@
                         </li>
                     </ul>
                 </li>
+                @endif
                 <li class="dropdown nav-item">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <div class="photo">
@@ -67,6 +79,14 @@
                         </li>
                     </ul>
                 </li>
+                @if($user == 1)
+                <li class=" nav-item">
+                            <a href=" " class="contact-logo cart-logo nav-link" style="width: max-content;"><i class="fas fa-shopping-cart"> (<span class="cart-counter"> {{ $cart }}</span>) </i> </a>
+                </li> 
+                <li>
+                    <a href=" " class="contact-logo"><i class="fab fa-shopify"></i> My Orders</a>
+                </li>  
+                @endif
                 <li class="separator d-lg-none"></li>
             </ul>
         </div>

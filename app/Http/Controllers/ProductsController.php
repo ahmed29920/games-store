@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Categorie;
 use App\Models\Product;
+use App\Models\Cart;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -122,5 +124,35 @@ class ProductsController extends Controller
 
         session()->flash('success', 'Product Deleted Successfully');
         return redirect(route('products.index'));
+    }
+
+    //add to cart some items
+    function addToCart(Request $request)
+    {
+        if(Auth::check() )
+        {   
+            $cart = new Cart;
+            $cart->user_id = Auth::user()->id;
+            $cart->product_id = $request->input('product_id');
+            $cart->save(); 
+            return redirect()->back();
+        } else {
+            return redirect('/login');
+        }            
+    }
+
+    //get num of items in thev cart
+    static function cartItems()
+    {
+        $user_id = Auth::user()->id;
+        $cart = cart::where('user_id' , $user_id)->count();
+        return $cart;
+    }
+    //display cart items
+    function cartList()
+    {
+        $user_id = Auth::user()->id;
+        $carts = DB::select('select * FROM `products` INNER JOIN `carts` ON products.id = `product_id` WHERE user_id = ' . $user_id );
+        return view('product/cartList' , ['carts'=>$carts]);
     }
 }

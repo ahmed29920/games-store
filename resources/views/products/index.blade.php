@@ -17,7 +17,7 @@
                             <th>Title</th>
                             <th>Description</th>
                             <th>Price</th>
-                            <th>Discount</th>
+                            <th>Price after Discount</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -37,7 +37,7 @@
                                     {{ $product->price }} EGP
                                 </td>
                                 <td>
-                                    {{ $product->discount}} %
+                                    {{ $product->discount}} EGB
                                 </td>
                                 <td class="d-flex">
                                     <form class=" ml-2" action="{{ route('products.destroy', $product->id) }}"

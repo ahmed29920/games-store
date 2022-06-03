@@ -18,9 +18,6 @@
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="{{ route('home') }}" class="nav-link text-primary">
-                        <i class="tim-icons icon-minimal-left"></i> {{ __('Back to Dashboard') }}
-                    </a>
                 </li>
                 <li class="nav-item ">
                     <a href="{{ route('register') }}" class="nav-link">
