@@ -145,7 +145,7 @@ class ProductsController extends Controller
     static function cartItems()
     {
         $user_id = Auth::user()->id;
-        $cart = cart::where('user_id' , $user_id)->count();
+        $cart = Cart::where('user_id' , $user_id)->count();
         return $cart;
     }
     //display cart items
@@ -153,6 +153,12 @@ class ProductsController extends Controller
     {
         $user_id = Auth::user()->id;
         $carts = DB::select('select * FROM `products` INNER JOIN `carts` ON products.id = `product_id` WHERE user_id = ' . $user_id );
-        return view('product/cartList' , ['carts'=>$carts]);
+        return view('products/cartList' , ['carts' => $carts]);
+    }
+    //remove product from cart
+    function removeCart($id)
+    {
+        Cart::destroy($id);
+        return redirect()->back()->with('status' , 'product removed from cart successfuly');
     }
 }

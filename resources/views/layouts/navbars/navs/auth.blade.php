@@ -81,10 +81,10 @@
                 </li>
                 @if($user == 1)
                 <li class=" nav-item">
-                            <a href=" " class="contact-logo cart-logo nav-link" style="width: max-content;"><i class="fas fa-shopping-cart"> (<span class="cart-counter"> {{ $cart }}</span>) </i> </a>
+                    <a href="cartList" class="contact-logo cart-logo nav-link" style="width: max-content;"><i class="fas fa-shopping-cart"> (<span class="cart-counter"> {{ $cart }}</span>) </i> </a>
                 </li> 
-                <li>
-                    <a href=" " class="contact-logo"><i class="fab fa-shopify"></i> My Orders</a>
+                <li class="nav-item">
+                    <a href="" class="nav-link" style="width: max-content;"><i class="tim-icons icon-bag-16 ">(<span class="cart-counter"> 0 </span>)</i> </a>
                 </li>  
                 @endif
                 <li class="separator d-lg-none"></li>
