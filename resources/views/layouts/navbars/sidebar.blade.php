@@ -33,7 +33,7 @@
             </li> -->
             @if(Auth::user()->role == 'user')
             <li>
-                <a href="#">
+                <a href="{{ route('cartList') }}">
                     <i class="tim-icons icon-cart"></i>
                     <p>{{ __('My Cart') }}</p>
                 </a>

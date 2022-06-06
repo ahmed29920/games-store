@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OffersController;
 
 
 /*
@@ -22,9 +23,12 @@ use App\Http\Controllers\DashboardController;
 // })->name('home');
 
 Auth::routes();
-
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
+Route::get('/clients', [App\Http\Controllers\HomeController::class, 'clients'])->name('clients');
+Route::get('/testmonial', [App\Http\Controllers\HomeController::class, 'testmonial'])->name('testmonial');
 Route::get('category/{id}', [App\Http\Controllers\HomeController::class, 'CategoryIndex'])->name('category');
+Route::get('product/{id}', [App\Http\Controllers\HomeController::class, 'ProductIndex'])->name('product');
 Route::get('add-to-cart/{id}',[ProductsController::class ,  'addToCart' ]);
 
 Auth::routes();
@@ -41,11 +45,12 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
 	Route::resource('/categories', CategoriesController::class);
 	Route::resource('/products', ProductsController::class)->except('show');
+	Route::resource('/offer', OffersController::class);
 });
 
 Route::group(['middleware' => 'auth'], function () {
 
-	Route::get('cartList',[ProductsController::class ,  'cartList' ]);
+	Route::get('cartList',[ProductsController::class ,  'cartList' ])->name('cartList');
     Route::get('remove-cart/{id}',[ProductsController::class ,  'removeCart' ]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
