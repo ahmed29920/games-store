@@ -58,6 +58,9 @@
          <div class="header" style="background-color:#136af8">
             <div class="container">
                <div class="row">
+               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
                   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                      <div class="full">
                         <div class="center-desk">
@@ -92,8 +95,8 @@
                                  <li class="nav-item">
                                     <a href="" class="nav-link" style="width: max-content;"><i class="fas fa-shopping-bag">(<span>0</span>)</i> </a>
                                  </li>
-                                 <li class="nav-link">
-                                    <a href="{{ route('logout') }}" class="nav-item" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>
+                                 <li class="nav-item">
+                                 <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>
                                  </li>
                                  @endif
                               </ul>

@@ -15,10 +15,9 @@
                      <div class="row marginii">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                            <div class="carousel-caption ">
-                              <h1>Welcome to <strong class="color">Our Shop</strong></h1>
+                              <h1>Welcome to <strong class="color">Gamers Shop</strong></h1>
                               <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                              <a class="btn btn-lg btn-primary" href="#" role="button">Buy Now</a>
-                              <a class="btn btn-lg btn-primary" href="about.html" role="button">About </a>
+                              <a class="btn btn-lg btn-primary" href="{{route('about')}}" role="button">About </a>
                            </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -37,8 +36,7 @@
                            <div class="carousel-caption ">
                               <h1><strong class="color">{{$offer->title}}</strong></h1>
                               <p>{{$offer->description}}</p>
-                              <a class="btn btn-lg btn-primary" href="product/{{$offer->product_id}}" role="button">Buy Now</a>
-                              <a class="btn btn-lg btn-primary" href="#" role="button">About</a>
+                              <a class="btn btn-lg btn-primary" href="product/{{$offer->product_id}}" role="button">See More</a>
                            </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -50,25 +48,6 @@
                   </div>
                </div>
                @endforeach
-               <!-- <div class="carousel-item">
-                  <div class="container">
-                     <div class="row marginii">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                           <div class="carousel-caption ">
-                              <h1>Welcome to <strong class="color">Our Shop</strong></h1>
-                              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                              <a class="btn btn-lg btn-primary" href="#" role="button">Buy Now</a>
-                              <a class="btn btn-lg btn-primary" href="about.html" role="button">About</a>
-                           </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                           <div class="img-box">
-                              <figure><img src="{{ asset('images/boksing-gloves.png') }}" alt="img"/></figure>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div> -->
             </div>
             <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
             <i class='fa fa-angle-left'></i></a>
@@ -84,7 +63,7 @@
                <div class="col-md-12 ">
                   <div class="titlepage">
                      <h2><strong class="black"> Our</strong>  Products</h2>
-                     <span>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected randomised words which don't look even slightly believable</span>
+                     <span>There are many games that you can recharge cards, gift cards and bill payments.</span>
                   </div>
                </div>
             </div>
@@ -96,9 +75,9 @@
                 @foreach($categories as $category)
                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                   <div class="sport_product">
-                     <figure><img src="{{ asset('upload/categories/' . $category->image) }}" alt="img"></figure>
-                     <h5 class="card-title">{{$category->name}}</h5>
-                     <a href="{{ route('category' , $category->id) }}" class="btn btn-primary">View this</a>
+                     <figure><img src="{{ asset('upload/categories/' . $category->image) }}" alt="category-img"></figure>
+                     <h3 class="card-title mt-2">{{$category->name}}</h3>
+                     <a href="{{ route('category' , $category->id) }}" class="btn btn-info">View this</a>
                   </div>
                </div>
                @endforeach

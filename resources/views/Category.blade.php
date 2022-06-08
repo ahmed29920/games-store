@@ -1,21 +1,20 @@
 @extends('layouts.homeLayout')
 
 @section('content')
-    <div class="header py-7 py-lg-8">
+    <div class="layout_padding padding_bottom_0">
         <div class="container">
             <div class="header-body text-center mb-7">
                 <div class="row justify-content-center">
-                    <div class="col-lg-5 col-md-6">
-                        <h1 class="text-white">{{ __('Welcome!') }}</h1>
-                        <p class="text-lead text-light">
+                    <div class="col-lg-5 col-md-6 mt-5">
+                        <h4 class="text-lead text-dark">
                             {{ __('PRODUCTS OF CATEGORY') }}
-                        </p>
+                        </h4>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row ">
                     @if ($products->count() > 0)
                         @foreach($products as $product)
-                        <div class="col-3">
+                        <div class="col-3 mb-5">
                             <div class="card" style="width: 15rem ;" >
                                 <img src="{{ asset('upload/products/' . $product->image) }}" class="card-img-top" alt="..."  style="height : 18rem;">
                                 <div class="card-body">
@@ -51,7 +50,7 @@
                 data: {product_id: productId},
                 success: function() {
                     $('.cart-counter').text( count + 1  ); 
-                }
+                },
             }) 
         });
     </script>

@@ -7,35 +7,45 @@
 @section('content')
 <div class="table-container">
 <!-- start table -->
-    <table  class="table  table-striped">
-        <!-- row -->
-        <tr class="">
-            <td class="" >IMAGE</td>
-            <td class="" >TITLE</td>
-            <td class="" >DESCRIPTION</td>
-            <td>OPREATION</td>
-        </tr>
-        @foreach ($offers as $offer)
-        <!-- row -->
-        <tr class=" ">
-            <td class="" > 
-                <img src="{{ asset('upload/offer/' . $offer->image) }}"  class="image" style="width : 150px">
-            </td>
-            <td class="" >{{$offer->title }}</td> 
-            <td class="" >{{$offer->description }}</td> 
-            <td class="d-flex">
-                <form class=" ml-2" action="{{ route('offer.destroy', $offer->id) }}"
-                    method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn btn-danger btn-sm">
-                        Delete
-                    </button>
-                </form>
-                <a class="btn btn-warning btn-sm" href = "{{ route('offer.edit', $offer->id) }}">EDIT </a>
-            </td>   
-        </tr>
-        @endforeach
-    </table>
+    <div class="clearfix">
+        <a href="{{ route('offer.create') }}" class="btn btn-success mb-2 float-end">Create Offer</a>
+    </div>
+    <div>All Product</div>
+    @if ($offers->count() > 0)
+        <table  class="table  table-striped">
+            <tr>
+                <td>IMAGE</td>
+                <td>TITLE</td>
+                <td>DESCRIPTION</td>
+                <td>OPREATION</td>
+            </tr>
+            @foreach ($offers as $offer)
+            <!-- row -->
+            <tr class=" ">
+                <td> 
+                    <img src="{{ asset('upload/offer/' . $offer->image) }}"  class="image" style="width : 150px">
+                </td>
+                <td>{{$offer->title }}</td> 
+                <td>{{$offer->description }}</td> 
+                <td class="d-flex">
+                    <form class=" ml-2" action="{{ route('offer.destroy', $offer->id) }}"
+                        method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger btn-sm">
+                            Delete
+                        </button>
+                    </form>
+                    <a class="btn btn-primary btn-sm" href = "{{ route('offer.edit', $offer->id) }}">EDIT </a>
+                </td>   
+            </tr>
+            @endforeach
+        </table>
+    @else
+        <div class="card-body text-center">
+            <h4>No Offers Yet.</h4>
+        </div>
+    @endif
+
 </div>        
 @endsection

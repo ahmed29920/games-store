@@ -82,17 +82,17 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, Categorie $category)
     {
+      $data = $request->only(['name']);
+      if ($request->hasFile('image')) {
         $file = $request->file('image');
         $extention = $file->getClientOriginalExtension();
         $filename = time().'.'.$extention;
         $file->move('upload/categories/' , $filename);
-        $category->update([
-            'name' => $request->name,
-            'image' => $filename,
-        ]);
-
-        session()->flash('success','category Updated successfuly');
-        return redirect(route('categories.index'));
+        $data['image'] = $filename;
+      }  
+      $category->update($data);
+      session()->flash('success','category Updated successfuly');
+      return redirect(route('categories.index'));
     }
 
     /**

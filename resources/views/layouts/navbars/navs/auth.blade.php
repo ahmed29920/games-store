@@ -57,7 +57,7 @@
                         </li>
                     </ul>
                 </li>
-                @endif
+            @endif
                 <li class="dropdown nav-item">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <div class="photo">

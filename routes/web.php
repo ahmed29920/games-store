@@ -29,11 +29,11 @@ Route::get('/clients', [App\Http\Controllers\HomeController::class, 'clients'])-
 Route::get('/testmonial', [App\Http\Controllers\HomeController::class, 'testmonial'])->name('testmonial');
 Route::get('category/{id}', [App\Http\Controllers\HomeController::class, 'CategoryIndex'])->name('category');
 Route::get('product/{id}', [App\Http\Controllers\HomeController::class, 'ProductIndex'])->name('product');
-Route::get('add-to-cart/{id}',[ProductsController::class ,  'addToCart' ]);
 
 Auth::routes();
 
 Route::group(['middleware' => 'admin'], function () {
+	
 	Route::get('/dashboard',[App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 	Route::get('icons', ['as' => 'pages.icons', 'uses' => 'App\Http\Controllers\PageController@icons']);
 	Route::get('maps', ['as' => 'pages.maps', 'uses' => 'App\Http\Controllers\PageController@maps']);
@@ -49,7 +49,8 @@ Route::group(['middleware' => 'admin'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-
+	
+	Route::get('add-to-cart/{id}',[ProductsController::class ,  'addToCart' ]);
 	Route::get('cartList',[ProductsController::class ,  'cartList' ])->name('cartList');
     Route::get('remove-cart/{id}',[ProductsController::class ,  'removeCart' ]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);

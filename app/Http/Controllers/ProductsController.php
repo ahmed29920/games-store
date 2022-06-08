@@ -129,7 +129,7 @@ class ProductsController extends Controller
     //add to cart some items
     function addToCart(Request $request)
     {
-        if(Auth::check() )
+        if(Auth::check())
         {   
             $cart = new Cart;
             $cart->user_id = Auth::user()->id;
