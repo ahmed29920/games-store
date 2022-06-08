@@ -20,6 +20,16 @@ class HomeController extends Controller
         return view('welcome' , ['categories' => Categorie::all() , 'offers' => Offer::all()]);
     }
 
+    /**
+     * Show the application home.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function shop()
+    {
+
+        return view('shop'  , ['categories' => Categorie::all() ]);
+    }
 
     /**
      * Show the application home.

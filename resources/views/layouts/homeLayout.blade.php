@@ -76,7 +76,7 @@
                                  <li> <a href="{{ route('home') }}">Home</a> </li>
                                  <li> <a href="{{ route('about') }}">About</a> </li>
                                  <li><a href="{{ route('testmonial') }}">Testmonial</a></li>
-                                 <li><a href="#">Shop</a></li>
+                                 <li><a href="{{ route('shop') }}">Shop</a></li>
                                  @if(!Auth::user())
                                  <li class="nav-item ">
                                     <a href="{{ route('register') }}" class="nav-link">
@@ -148,9 +148,9 @@
                   <div class="menu_main">
                      <div class="menu_text">
                         <ul>
-                           <li class="active"><a href="#">Home</a></li>                         
-                           <li><a href="about.html">About</a></li>
-                           <li><a href="testmonial.html">Testmonial</a></li>
+                           <li class="active"><a href="{{ route('home') }}">Home</a></li>                         
+                           <li><a href="{{ route('about') }}">About</a></li>
+                           <li><a href="{{ route('testmonial') }}">Testmonial</a></li>
                            <li><a href="clients.html">Shop</a></li>
                            <li><a href="contact.html">Contact Us</a></li>
                         </ul>
@@ -163,7 +163,7 @@
       <!-- footer start-->
       <div id="plant" class="footer layout_padding">
          <div class="container">
-            <p>© 2019 All Rights Reserved. Design by<a href="https://html.design/"> Free Html Templates</a></p>
+            <p>© 2022 All Rights Reserved. Design by <a href="https://www.linkedin.com/in/muhamed3li/" target="_blank">   Mohammed Ali   </a>  &    <a href="https://www.linkedin.com/in/ahmed-ashraf-4b7359222/" target="_blank">  Ahmed Ashraf  </a>   </p>
          </div>
       </div>
 

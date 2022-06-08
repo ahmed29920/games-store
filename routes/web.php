@@ -25,6 +25,7 @@ use App\Http\Controllers\OffersController;
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
+Route::get('/shop', [App\Http\Controllers\HomeController::class, 'shop'])->name('shop');
 Route::get('/clients', [App\Http\Controllers\HomeController::class, 'clients'])->name('clients');
 Route::get('/testmonial', [App\Http\Controllers\HomeController::class, 'testmonial'])->name('testmonial');
 Route::get('category/{id}', [App\Http\Controllers\HomeController::class, 'CategoryIndex'])->name('category');
@@ -33,7 +34,7 @@ Route::get('product/{id}', [App\Http\Controllers\HomeController::class, 'Product
 Auth::routes();
 
 Route::group(['middleware' => 'admin'], function () {
-	
+
 	Route::get('/dashboard',[App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 	Route::get('icons', ['as' => 'pages.icons', 'uses' => 'App\Http\Controllers\PageController@icons']);
 	Route::get('maps', ['as' => 'pages.maps', 'uses' => 'App\Http\Controllers\PageController@maps']);
