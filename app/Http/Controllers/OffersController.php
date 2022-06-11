@@ -14,7 +14,7 @@ class OffersController extends Controller
     //     return view('welcome',  ['offers' => $offers]);
     // }
 
-    function show(){
+    function index(){
         $offers = Offer::all();
         return view('offer/index', ['offers' => $offers]);    
     }

@@ -56,13 +56,13 @@
                     <div class="collapse" id="laravel-examples">
                         <ul class="nav pl-4">
                             <li>
-                                <a href="/categories">
+                                <a href="{{ route('categories.index') }}">
                                     <i class="tim-icons icon-bullet-list-67"></i>
                                     <p>{{ __('Show Categories') }}</p>
                                 </a>
                             </li>
                             <li>
-                            <a href="/categories/create">
+                            <a href="{{ route('categories.create') }}">
                                     <i class="tim-icons icon-simple-add"></i>
                                     <p>{{ __('Create Category') }}</p>
                                 </a>
@@ -80,13 +80,13 @@
                     <div class="collapse " id="laravel1-examples">
                         <ul class="nav pl-4">
                             <li>
-                                <a href="/products">
+                                <a href="{{ route('products.index') }}">
                                     <i class="tim-icons icon-bullet-list-67"></i>
                                     <p>{{ __('Show Products') }}</p>
                                 </a>
                             </li>
                             <li>
-                            <a href="/products/create">
+                            <a href="{{ route('products.create') }}">
                                     <i class="tim-icons icon-simple-add"></i>
                                     <p>{{ __('Create Products') }}</p>
                                 </a>
@@ -104,13 +104,13 @@
                     <div class="collapse " id="laravel2-examples">
                         <ul class="nav pl-4">
                             <li>
-                                <a href="/offer/index">
+                                <a href="{{ route('offer.index') }}">
                                     <i class="tim-icons icon-bullet-list-67"></i>
                                     <p>{{ __('Show Offers') }}</p>
                                 </a>
                             </li>
                             <li>
-                            <a href="/offer/create">
+                            <a href="{{ route('offer.create') }}">
                                     <i class="tim-icons icon-simple-add"></i>
                                     <p>{{ __('Create Offers') }}</p>
                                 </a>

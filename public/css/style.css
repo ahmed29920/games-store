@@ -653,6 +653,9 @@ ul.top_icon li a {
      line-height: 15px;
      padding: 5px 0;
 }
+.dropdown .dropdown-menu-dark li a:hover {
+     color: #136af7;
+}
 
 .dropdown-bar .dropdown-link li a:hover {
      color: #38c8a8;

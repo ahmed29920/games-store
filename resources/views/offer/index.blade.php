@@ -10,7 +10,7 @@
     <div class="clearfix">
         <a href="{{ route('offer.create') }}" class="btn btn-success mb-2 float-end">Create Offer</a>
     </div>
-    <div>All Product</div>
+    <div>All Offers</div>
     @if ($offers->count() > 0)
         <table  class="table  table-striped">
             <tr>

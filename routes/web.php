@@ -33,7 +33,7 @@ Route::get('product/{id}', [App\Http\Controllers\HomeController::class, 'Product
 
 Auth::routes();
 
-Route::group(['middleware' => 'admin'], function () {
+Route::group(['middleware' => 'admin' , 'prefix' => 'admin'], function () {
 
 	Route::get('/dashboard',[App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 	Route::get('icons', ['as' => 'pages.icons', 'uses' => 'App\Http\Controllers\PageController@icons']);

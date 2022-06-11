@@ -25,8 +25,6 @@
       <meta name="author" content="">
       <!-- bootstrap css -->
       <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-      <!-- style css -->
-      <link rel="stylesheet" href="{{ asset('css/style.css') }}">
       <!-- Responsive-->
       <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
       <!-- fevicon -->
@@ -41,6 +39,8 @@
       <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
       <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!-- style css -->
+      <link rel="stylesheet" href="{{ asset('css/style.css') }}">
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -95,8 +95,27 @@
                                  <li class="nav-item">
                                     <a href="" class="nav-link" style="width: max-content;"><i class="fas fa-shopping-bag">(<span>0</span>)</i> </a>
                                  </li>
-                                 <li class="nav-item">
+                                 <!-- <li class="nav-item">
                                  <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>
+                                 </li> -->
+                                 <li class="dropdown nav-item">
+                                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                       <i class="tim-icons icon-single-02"><b class="caret d-none d-lg-block d-xl-block"></b></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark " style="width:auto">
+                                          <li class="nav-link">
+                                             <a href="{{ route('profile.edit') }}" class="nav-item dropdown-item">{{ __('Profile') }}</a>
+                                          </li>
+                                          @if(Auth::user()->role == 'admin')
+                                          <li class="nav-link">
+                                             <a href="{{ route('dashboard') }}" class="nav-item dropdown-item">{{ __('Dashboard') }}</a>
+                                          </li>
+                                          @endif
+                                          <li class="dropdown-divider"></li>
+                                          <li class="nav-link">
+                                             <a href="{{ route('logout') }}" class="nav-item dropdown-item" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>
+                                          </li>
+                                    </ul>
                                  </li>
                                  @endif
                               </ul>
