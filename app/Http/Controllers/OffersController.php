@@ -8,11 +8,10 @@ use Illuminate\Http\Request;
 use DB;
 class OffersController extends Controller
 {
-    //display 
-    // function index(){
-    //     $offers = Offer::all();
-    //     return view('welcome',  ['offers' => $offers]);
-    // }
+    public function __construct()
+    {
+        $this->middleware('checkProduct')->only('create');
+    }
 
     function index(){
         $offers = Offer::all();
@@ -41,12 +40,14 @@ class OffersController extends Controller
         }
 
         $offer->save();
-        return redirect()->back()->with('status' , 'offer added successfuly');
+        Session()->flash('SucessMessage', 'offer added successfulyy.');
+        return redirect(route('offers.index'));
     }
 
     function destroy($id) {
-        DB::delete('delete from slider where id = ?',[$id]);
-        return redirect()->back()->with('status' , 'offer add successfuly');
+        DB::delete('delete from offers where id = ?',[$id]);
+        Session()->flash('message', 'offer deleted successfuly.');
+        return redirect(route('offers.index'));
     }
 
 
@@ -80,8 +81,9 @@ class OffersController extends Controller
         }
         $offer->update($data);
         
-        session()->flash('success', 'Offer Updated successfully');
-        // return redirect(route('offer.index'));
-        return redirect()->back()->with('status' , 'offer updated successfuly');
+        Session()->flash('SucessMessage', 'offer updated successfuly.');
+        
+        return redirect(route('offers.index'));
+
     }
 }

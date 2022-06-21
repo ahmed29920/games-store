@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        return view('welcome' , ['categories' => Categorie::all() , 'offers' => Offer::all()]);
+        return view('welcome' , ['categories' => Categorie::paginate(3) , 'offers' => Offer::all()]);
     }
 
     /**

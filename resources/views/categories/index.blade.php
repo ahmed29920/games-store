@@ -1,6 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+@if(Session::has('message'))
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+{{ Session::get('message') }}
+  <button type="button" class="close mt-1" data-dismiss="alert" aria-label="Close">
+      <i class="tim-icons icon-simple-remove"></i>
+  </button>
+</div>
+@endif
+@if(Session::has('SucessMessage'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+{{ Session::get('SucessMessage') }}
+  <button type="button" class="close mt-1" data-dismiss="alert" aria-label="Close">
+      <i class="tim-icons icon-simple-remove"></i>
+  </button>
+</div>
+@endif
   <div class="row">
     <div class="col-md-12">
       <div class="card">

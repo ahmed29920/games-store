@@ -81,7 +81,12 @@
                   </div>
                </div>
                @endforeach
-             </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+               <div class="col-auto">
+                    <a href="{{ route('shop') }}" class="btn btn-info"> See More </a>
+               </div>
+            </div>
             </div>
            </div>
       </div>

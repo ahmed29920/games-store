@@ -5,11 +5,6 @@
 @endsection
 
 @section('content')
-@if(Session('status'))
-        <div class="alert alert-success">
-            {{ Session('status') }}
-        </div>
-    @endif
     <div class="card card-default">
         <div class="card-header">
             {{ isset($offer) ? 'Update Offer' : 'Add New Offer' }}

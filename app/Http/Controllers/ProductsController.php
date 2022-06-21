@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 class ProductsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('checkCategory')->only('create');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -56,7 +61,7 @@ class ProductsController extends Controller
             'category_id' => $request->category_id,
         ]);
 
-        session()->flash('success', 'Product created successfully');
+        Session()->flash('SucessMessage', 'Product added successfuly.');
         return redirect(route('products.index',  [
             'categories' => Categorie::all(),
         ]));
@@ -108,8 +113,7 @@ class ProductsController extends Controller
             $data['image'] = $filename;
         }
         $product->update($data);
-        
-        session()->flash('success', 'Product Updated successfully');
+        Session()->flash('SucessMessage', 'Product Updated successfully.');
         return redirect(route('products.index'));
     }
 
@@ -121,8 +125,8 @@ class ProductsController extends Controller
      */
     public function destroy(Product $product)
     {
-
-        session()->flash('success', 'Product Deleted Successfully');
+        $product->delete();
+        Session()->flash('success', 'Product Deleted Successfully');
         return redirect(route('products.index'));
     }
 
@@ -159,6 +163,8 @@ class ProductsController extends Controller
     function removeCart($id)
     {
         Cart::destroy($id);
-        return redirect()->back()->with('status' , 'product removed from cart successfuly');
+        Session()->flash('message', 'product removed from cart successfuly.');
+
+        return redirect()->back();
     }
 }
