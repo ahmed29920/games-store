@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OffersController;
+use App\Http\Controllers\SocialiteAuthController;
 
 
 /*
@@ -30,6 +31,9 @@ Route::get('/clients', [App\Http\Controllers\HomeController::class, 'clients'])-
 Route::get('/testmonial', [App\Http\Controllers\HomeController::class, 'testmonial'])->name('testmonial');
 Route::get('category/{id}', [App\Http\Controllers\HomeController::class, 'CategoryIndex'])->name('category');
 Route::get('product/{id}', [App\Http\Controllers\HomeController::class, 'ProductIndex'])->name('product');
+
+Route::get('google', [SocialiteAuthController::class, 'googleRedirect'])->name('auth/google');
+Route::get('/auth/google-callback', [SocialiteAuthController::class, 'loginWithGoogle']);
 
 Auth::routes();
 

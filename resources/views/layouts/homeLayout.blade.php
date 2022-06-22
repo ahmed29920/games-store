@@ -41,6 +41,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       <!-- style css -->
       <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+      <link rel="stylesheet" href="{{ asset('css/dark.css') }}">
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -118,6 +119,19 @@
                                     </ul>
                                  </li>
                                  @endif
+                                 <li class="dropdown nav-item">
+                                 <div class="form-check form-switch">
+                                    <!-- Default checked -->
+                                    <div class="custom-control custom-switch">
+                                       <input type="checkbox" class="custom-control-input" role="switch" id="darkSwitch" checked>
+                                       <label class="custom-control-label" for="darkSwitch"></label>
+                                    </div>
+                                 </div>
+                                 </li>
+                                 <!-- <div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+  <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+</div> -->
                               </ul>
                            </nav>
                         </div>
@@ -192,6 +206,7 @@
       <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
       <script src="{{ asset('js/jquery-3.0.0.min.js') }}"></script>
       <script src="{{ asset('js/plugin.js') }}"></script>
+      <script src="{{ asset('js/dark.js') }}"></script>
       <!-- sidebar -->
       <script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
       <script src="{{ asset('js/custom.js') }}"></script>
