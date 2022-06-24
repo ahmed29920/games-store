@@ -62,14 +62,14 @@
                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
-                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                  <div class="col-xl-3 col-lg-2 col-md-2 col-sm-3 col logo_section">
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo"> <a href="index.html"><img src="{{ asset('images/logo.png') }}" alt="#"></a> </div>
                         </div>
                      </div>
                   </div>
-                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                  <div class="col-xl-9 col-lg-10 col-md-10 col-sm-9">
                      <div class="menu-area">
                         <div class="limit-box">
                            <nav class="main-menu">
@@ -119,19 +119,14 @@
                                     </ul>
                                  </li>
                                  @endif
-                                 <li class="dropdown nav-item">
-                                 <div class="form-check form-switch">
-                                    <!-- Default checked -->
-                                    <div class="custom-control custom-switch">
-                                       <input type="checkbox" class="custom-control-input" role="switch" id="darkSwitch" checked>
-                                       <label class="custom-control-label" for="darkSwitch"></label>
+                                 <li class="dropdown nav-item" >
+                                    <div class="form-check form-switch mb-3 " >
+                                       <!-- <button type="submit"></button> -->
+                                       <input class="form-check-input" type="checkbox" role="switch" id="darkSwitch">
+                                          <label class="form-check-label" for="darkSwitch"><i class="fa fa-moon-o fa-2x" aria-hidden="true"></i></label>
                                     </div>
-                                 </div>
                                  </li>
-                                 <!-- <div class="form-check form-switch">
-  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-  <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
-</div> -->
+             
                               </ul>
                            </nav>
                         </div>

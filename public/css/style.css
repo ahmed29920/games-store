@@ -1822,6 +1822,117 @@ img.zoom {
      display: none;
 }
 
+
+/* ---------------responsive---------------- */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+     .main-menu  ul li a {
+          padding: 0;
+     }
+
+     .header {
+          padding-top: 22px;
+     }
+
+     .header .form-check{
+          margin-top: 8px;
+          margin-bottom: 0;
+          padding-bottom: 10px;
+     }
+
+     .main-menu ul li{
+          margin-right: 12px;
+     }
+
+     nav {
+          margin-top: -15px;
+     }
+     
+     .form-check-label{
+          padding-top: 24px;
+          margin-bottom: 0;
+     }
+
+     .form-check-input {
+          margin-top: 32px;
+     }
+
+     .full {
+          margin-top: 16px;
+     }
+     
+     .carousel-caption{
+          font-size: 10px;
+     }
+
+     .banner-main .carousel-caption h1 {
+         font-size: 25px;
+         padding-top: 0px;
+     }
+     
+     .banner-main .carousel-caption  {
+        top : 0%;
+     }
+     
+     .banner-main .carousel-caption p {
+         padding: 0;
+     }
+     
+     .main { width: 15%;}
+     .info_icon { min-width: 10%;}
+     #main_slider a.carousel-control-prev { display: none; }
+
+}
+
+@media only screen and (min-width: 420px) and (max-width: 767px) {
+     .mean-container .mean-bar, .mean-container .mean-bar {
+          background: none;
+     }
+     .mean-container .meanmenu-reveal{
+       margin-top: -13%;
+     }
+     #main_slider a.carousel-control-prev {
+          position: absolute;
+          display: none;
+      }
+     .btn_main { margin-top: 58px;}
+      #main_slider a.carousel-control-next {
+          position: absolute;
+          display: none;
+     }
+     .img-box{
+         width: 45%;   
+         float: right; 
+     }
+ 
+     .carousel-caption{
+          width: 45%;
+          display: block; 
+          font-size: 10px;   
+     }
+
+     .banner-main .carousel-caption h1 {
+         font-size: 25px;
+         padding-top: 0px;
+     }
+     
+     .banner-main .carousel-caption  {
+        top : 0%;
+     }
+     
+     .banner-main .carousel-caption p {
+         padding: 0;
+     }
+}
+
+ /* @media  (max-width: 768px) {
+   .custom-navbar .navbar-nav.navbar-nav-first {
+     margin-left: 0em;
+   }
+   .custom-navbar .nav li a {
+     padding-right: 5px;
+   }
+ } */
+
 /** end section **/
 .margin-r-l {
      padding-right: 40px;

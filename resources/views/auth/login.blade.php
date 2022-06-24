@@ -35,7 +35,7 @@
                     <button type="submit" href="" class="btn btn-primary btn-lg btn-block mb-3">{{ __('Get Started') }}</button>
                     <!-- Google Login Button -->
                     <h6 class="text-center">
-                        <a href="{{ route('auth/google') }}" class="link footer-link"> {{ __('Login with Google') }} </a>
+                        <a href="" class="link footer-link"> {{ __('Login with Google') }} </a>
                         <!-- <a href="{{ route('register') }}" class="link footer-link">{{ __('Create Account') }}</a> -->
                     </h6>
                     <div class="pull-left">

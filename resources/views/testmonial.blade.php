@@ -2,7 +2,7 @@
 
 @section('content')
       <!--Our  Clients -->
-      <div id="plant" class="mt-5 section_Clients layout_padding padding_bottom_0">
+      <div id="plant" class="mt-5 section_Clients clients layout_padding padding_bottom_0">
          <div class="container">
             <div class="row">
                <div class="col-md-12 ">
