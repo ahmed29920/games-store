@@ -33,7 +33,7 @@ Route::get('/testmonial', [App\Http\Controllers\HomeController::class, 'testmoni
 Route::get('category/{id}', [App\Http\Controllers\HomeController::class, 'CategoryIndex'])->name('category');
 Route::get('product/{id}', [App\Http\Controllers\HomeController::class, 'ProductIndex'])->name('product');
 
-Route::get('/login/{provider}', [SocialAccountController::class, 'redirectToProvider']);
+Route::get('/login/{provider}', [SocialAccountController::class, 'redirectToProvider'])->name('googleLogin');
 Route::get('/login/{provider}/callback', [SocialAccountController::class, 'handleProviderCallback']);
 // Route::get('google', [SocialiteAuthController::class, 'googleRedirect'])->name('auth/google');
 // Route::get('/auth/google-callback', [SocialiteAuthController::class, 'loginWithGoogle']);

@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Models\SocialiteAccount;
+use App\Models\SocialAccount;
 use App\Models\User;
 use Laravel\Socialite\Contracts\User as ProviderUser;
 
@@ -10,7 +10,7 @@ class SocialAccountService {
 
     public function findOrCreate(ProviderUser $providerUser , $provider)
     {
-        $account = SocialiteAccount::where('provider_id', $providerUser->getId())
+        $account = SocialAccount::where('provider_id', $providerUser->getId())
             ->where('provider_name', $provider)->first();
 
         if ($account) {

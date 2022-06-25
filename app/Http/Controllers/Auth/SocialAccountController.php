@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Socialite;
+use Auth;
 use App\SocialAccountService;
 
 
@@ -24,9 +25,11 @@ class SocialAccountController extends Controller
         }
     
         $authUser = $profileService->findOrCreate($user , $provider);
-
-        auth()->login($authUser , true);
-        return redirect()->to('home');
+        
+        // auth()->login($authUser, true);
+        auth()->login($authUser, true);
+        // Auth::login($authUser, $remember = true);
+        return redirect()->to('/');
     }
 
     // ty{}
